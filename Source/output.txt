@@ -1,0 +1,3 @@
+cameras: 4
+positions: [0, 1, 4, 6]
+cost: 4

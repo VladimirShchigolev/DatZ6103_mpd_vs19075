@@ -1,0 +1,22 @@
+Rooms: 16
+Camera positions: 25
+Max number of cameras: 17
+Avg rooms per camera position: 3.04
+
+====================
+
+LAHC
+Cameras: 9
+Positions: [1, 4, 6, 7, 8, 12, 16, 21, 22]
+Unsupervised rooms: 0
+Cost: 9
+Time spent: 3 s
+
+====================
+
+Naive (Optimal solution)
+Cameras: 9
+Positions: [1, 3, 4, 7, 8, 9, 12, 16, 22]
+Unsupervised rooms: 0
+Cost: 9
+Time spent: 350.11 s

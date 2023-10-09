@@ -1,0 +1,18 @@
+Rooms: 888
+Camera positions: 700
+Max number of cameras: 635
+Avg rooms per camera position: 323.17
+
+====================
+
+LAHC
+Cameras: 23
+Positions: [5, 79, 80, 137, 171, 209, 248, 264, 291, 362, 398, 403, 450, 526, 539, 556, 570, 608, 654, 663, 668, 669, 679]
+Unsupervised rooms: 0
+Cost: 23
+Time spent: 70.0 s
+
+====================
+
+Naive (Optimal solution)
+Not Available

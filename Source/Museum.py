@@ -10,7 +10,6 @@ class Museum:
         self.camera_position_count = camera_position_count
         self.max_camera_count = max_camera_count
         self.camera_sights = camera_sights
-        self.best = None
 
         self.room_camera_positions = [list() for room in range(room_count)]
         for camera_position in range(len(camera_sights)):
@@ -39,5 +38,22 @@ class Museum:
             late_acceptance[k] = candidate_cost
             k = (k+1) % n
 
-        self.best = best_solution
         return best_solution
+
+    def naive(self):
+        subset_count = 2**self.camera_position_count
+        best_solution = CameraArrangement(self, [False for camera in range(self.camera_position_count)])
+        best_cost = best_solution.cost()
+
+        time_start = time.time()
+
+        for subset_id in range(subset_count):
+            subset = [bool(subset_id & (1 << bit)) for bit in range(self.camera_position_count)]
+            solution = CameraArrangement(self, subset)
+            solution_cost = solution.cost()
+
+            if solution_cost < best_cost:
+                best_cost = solution_cost
+                best_solution = solution
+
+        return best_solution, time.time()-time_start

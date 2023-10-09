@@ -25,12 +25,15 @@ class CameraArrangement:
 
             arrangement_cost += max(2-cameras, 0)
 
+        # give cost priority to unsupervised rooms
+        arrangement_cost *= (self.museum.max_camera_count+1)
+
         # cost from used cameras
         used_cameras = sum(self.camera_arrangement)
         if used_cameras <= self.museum.max_camera_count:
             arrangement_cost += used_cameras
         else:
-            arrangement_cost = self.museum.room_count*2 + used_cameras  # basically +infinity
+            arrangement_cost = self.museum.room_count*2*(self.museum.max_camera_count+2)  # basically +infinity
 
         return arrangement_cost
 
